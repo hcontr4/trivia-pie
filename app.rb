@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
+require "sinatra/cookies"
 
 require "http"
 require "json"
@@ -38,9 +39,11 @@ get("/:category") do
 end
 
 get("/:category/correct") do
-  "RIGHTTTT"
+  @category = params[:category]
+  erb(:correct)
 end
 
 get("/:category/incorrect") do
-  "WRONGGGG"
+  @category = params[:category]
+  erb(:incorrect)
 end

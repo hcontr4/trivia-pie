@@ -1,6 +1,7 @@
 <div class="question-screen">
   <div class="question">
-    <h1><%= @question %></h1>
+    <h1><%= @category.capitalize %></h1>
+    <h2><%= @question %></h2>
   </div>
   <div class="question-options">
     <% @options.each do |option| %>
@@ -11,5 +12,5 @@
       <% end %>
     <% end %>
   </div>
-  <%= @category %>
+  <a href="/">Pick another category</a>
 </div>

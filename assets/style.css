@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  
   height: 100%;
   width: 100%;
 }
@@ -39,4 +40,27 @@ body {
 }
 .option:visited {
   color: black;
+}
+
+.correct-screen {
+  background-color: lawngreen;
+}
+
+.incorrect-screen {
+  background-color: tomato;
+}
+
+.incorrect-screen>* {
+  margin: 20px;
+}
+
+.correct-screen, 
+.incorrect-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
 }
