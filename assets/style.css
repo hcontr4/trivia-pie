@@ -8,6 +8,13 @@ body {
   height: 100%;
   width: 100%;
 }
+a {
+  color:black;
+  text-decoration: none;
+}
+a:visited{
+  color: inherit;
+}
 
 #slice-bar {
   display: flex;
@@ -17,7 +24,10 @@ body {
 }
 
 .category-button {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon {
