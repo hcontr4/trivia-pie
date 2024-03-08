@@ -1,3 +1,15 @@
-<%= @question %>  
-<%= @correct_answer %>
-<%= @incorrect_answers %>
+<div class="question-screen">
+  <div class="question">
+    <h1><%= @question %></h1>
+  </div>
+  <div class="question-options">
+    <% @options.each do |option| %>
+      <% if option == @correct_answer %>
+        <a class="option" href="/<%= @category%>/correct"><%= option %></a>
+      <% else %>
+        <a class="option" href="/<%= @category%>/incorrect"><%= option %></a>
+      <% end %>
+    <% end %>
+  </div>
+  <%= @category %>
+</div>

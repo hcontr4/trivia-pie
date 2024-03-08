@@ -27,7 +27,15 @@ get("/:category") do
 
   @question = question_block["question"]
   @correct_answer = question_block["correct_answer"]
-  @incorrect_answers = question_block["incorrect_answers"]
+  @options = (question_block["incorrect_answers"] << @correct_answer).shuffle()
   
   erb(:question)
+end
+
+get("/:category/correct") do
+  "RIGHTTTT"
+end
+
+get("/:category/incorrect") do
+  "WRONGGGG"
 end

@@ -23,3 +23,15 @@ body {
   width: 48px;
   height: 48px;
 }
+
+.question-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  border-style: solid;
+}
