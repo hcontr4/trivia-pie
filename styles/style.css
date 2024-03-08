@@ -1,0 +1,25 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#slice-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: aquamarine;
+  width: 100%;
+}
+
+.category-button {
+
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
