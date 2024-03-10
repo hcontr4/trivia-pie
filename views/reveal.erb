@@ -1,11 +1,13 @@
 <div class="question-screen">
-  <h1><%= @category.capitalize %></h1>
-  <h2><%= @question %></h2>
-  <% if @result == "correct" %>
-    <h2 style="color:green;">Correct</h2>
-  <% else %>
-    <h2 style="color:red>Incorrect</h2>
-  <% end %>
+  <div class="question-info">
+    <h1><%= @category.capitalize %></h1>
+    <h2><%= @question %></h2>
+    <% if @result == "correct" %>
+      <h2 style="color:green;">Correct</h2>
+    <% else %>
+      <h2 style="color:red">Incorrect</h2>
+    <% end %>
+  </div>
   <div class="question-options">
     <% @options.each do |option| %>
       <% if option == @correct_answer %>

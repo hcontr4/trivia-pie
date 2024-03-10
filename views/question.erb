@@ -1,6 +1,8 @@
 <div class="question-screen">
-  <h1><%= @category.capitalize %></h1>
-  <h2><%= @question %></h2>
+  <div class="question-info">
+    <h1><%= @category.capitalize %></h1>
+    <h2><%= @question %></h2>
+  </div>
   <div class="question-options">
     <% @options.each do |option| %>
       <% if option == @correct_answer %>
