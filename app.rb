@@ -60,11 +60,18 @@ get("/game/:category") do
   @correct_answer = question_block["correct_answer"]
   @options = (question_block["incorrect_answers"] << @correct_answer).shuffle()
 
+  cookies[:question] = @question
+  cookies[:correct_answer] = @correct_answer
+  cookies[:options] = JSON.generate(@options)
+
   erb(:question)
 end
 
 get("/game/:category/correct") do
   @category = params[:category]
+  @question = cookies[:question]
+  @correct_answer = cookies[:correct_answer]
+  @options = JSON.parse(cookies[:options])
 
   # Retrieve game status and update 
   slice_status = JSON.parse(cookies[:slice_status])
@@ -80,10 +87,14 @@ get("/game/:category/correct") do
   end
 
   #@status = slice_status
-  erb(:correct)
+  erb(:reveal)
 end
 
 get("/game/:category/incorrect") do
   @category = params[:category]
-  erb(:incorrect)
+  @question = cookies[:question]
+  @correct_answer = cookies[:correct_answer]
+  @options = JSON.parse(cookies[:options])
+
+  erb(:reveal)
 end

@@ -1,0 +1,18 @@
+<div class="question-screen">
+  <h1><%= @category.capitalize %></h1>
+  <h2><%= @question %></h2>
+  <div class="question-options">
+    <% @options.each do |option| %>
+      <% if option == @correct_answer %>
+        <div class="correct-option option" href="/game/<%= @category %>/correct"><%= option %></div>
+      <% else %>
+        <div class="incorrect-option option" href="/game/<%= @category %>/incorrect"><%= option %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <a href="/game/<%=@category%>">
+    <!-- Pick another <%= @category %> question -->
+    <img class="reroll" src="/images/reroll-icon.svg" alt="reroll-question">
+  </a>
+  <a class="new-category" href="/game">Pick another category</a>
+</div>
