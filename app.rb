@@ -17,7 +17,27 @@ get("/") do
   erb(:landing)
 end
 
-get("/:category") do
+get("/reset_game") do 
+  cookies[:slice_status] = JSON.generate({
+    "film" => false,
+    "science" => false,
+    "history" => false,
+    "sports" => false,
+    "geography" => false,
+  })
+
+  redirect to "/game"
+end
+
+get("/game") do
+  pie_status = cookies[:slice_status]
+  redirect to "/" if pie_status.nil?
+
+  @slice_status = JSON.parse(pie_status)
+  erb(:game)
+end
+
+get("/game/:category") do
   @category = params[:category]
 
   api_url = "https://opentdb.com/api.php?amount=1&category=#{CATEGORY_CODE[@category]}&difficulty=medium&type=multiple"
@@ -38,12 +58,16 @@ get("/:category") do
   erb(:question)
 end
 
-get("/:category/correct") do
+get("/game/:category/correct") do
   @category = params[:category]
+
+  slice_status = JSON.parse(cookies[:slice_status])
+  slice_status[@category] = true
+  cookies[:slice_status] = JSON.generate(slice_status)
   erb(:correct)
 end
 
-get("/:category/incorrect") do
+get("/game/:category/incorrect") do
   @category = params[:category]
   erb(:incorrect)
 end

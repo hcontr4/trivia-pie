@@ -1,17 +1,15 @@
 html,
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  
   height: 100%;
   width: 100%;
+  margin: 0px;
 }
+
 a {
   color:black;
   text-decoration: none;
 }
+
 a:visited{
   color: inherit;
 }
@@ -73,4 +71,59 @@ a:visited{
 
   height: 100%;
   width: 100%;
+}
+
+.pie-progress {
+  height: 300px;
+  width: 300px;
+  display: flex;
+
+  background-color: lightgray;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.category-slice {
+  box-sizing: border-box;
+  height: 100%;
+  width: 20%;
+
+  border-left: 2px solid black;
+  border-right: 2px solid  black;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  /*background-color: aquamarine;*/
+}
+
+#film-slice-on {
+  background-color: deeppink; /* Blue */
+}
+
+#science-slice-on {
+  background-color: darkgreen; /* Green */
+}
+
+#history-slice-on {
+  background-color: yellow; /* Red */
+}
+
+#sports-slice-on {
+  background-color: orange; /* Orange */
+}
+
+#geography-slice-on {
+  background-color: blue; /* Purple */
+}
+
+#slice-off {
+  background-color: inherit;
 }

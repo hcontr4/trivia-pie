@@ -1,0 +1,40 @@
+<div class="landing-page">
+  <h1>Pick a category</h1>
+
+  <div class="pie-progress">
+    <% slice_categories = ["film", "science", "history", "sports", "geography"] %>
+    <% slice_categories.each do |category| %>
+      <% slice_id = @slice_status[category] ? "#{category}-slice-on" : "slice-off" %>
+      <div class="category-slice" id="<%= slice_id %>"></div>
+    <% end %>
+  </div>
+
+  <a href="/reset_game"><h2>Reset Game</h2></a>
+
+  <div id="slice-bar">
+    <a href="/game/film" class="category-button">
+      <img class="icon" src="/images/entertainment-film.svg" alt="entertainment-film">
+      <span class="category-label">Film</span>
+    </a>
+  
+    <a href="/game/science" class="category-button">
+      <img class="icon" src="/images/science-nature.svg" alt="science-nature">
+      <span class="category-label">Science</span>
+    </a>
+  
+    <a href="/game/history" class="category-button">
+      <img class="icon" src="/images/history.svg" alt="history">
+      <span class="category-label">History</span>
+    </a>
+  
+    <a href="/game/sports" class="category-button">
+      <img class="icon" src="/images/sports.svg" alt="sports">
+      <span class="category-label">Sports</span>
+    </a>
+  
+    <a href="/game/geography" class="category-button">
+      <img class="icon" src="/images/geography.svg" alt="geography">
+      <span class="category-label">Geography</span>
+    </a>
+  </div>
+</div>
