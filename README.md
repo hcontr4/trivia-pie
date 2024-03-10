@@ -1,6 +1,6 @@
 # trivia-pie
 
-Simple trivia where the goal is to get once of each slice/category
+Simple trivia game where the goal is to get one of each slice/category
 - click on category to attempt slice
 - if answer if unknown or attemp is wrong press arrow symbol for another question
 - obtain slice by answering a question correctly
