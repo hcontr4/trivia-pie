@@ -36,7 +36,7 @@ end
 
 get("/game") do
   pie_status = cookies[:slice_status]
-  redirect to "/" if pie_status.nil?
+  redirect to "/reset-game" if pie_status.nil?
 
   @slice_status = JSON.parse(pie_status)
   erb(:game)
@@ -50,8 +50,8 @@ get("/game/:category") do
   parsed_response = JSON.parse(raw_response)
   # api call did not return question, wait a bit and ask again
   unless parsed_response["response_code"] == 0
-    sleep(0.5)
-    redirect ("/#{@category}")
+    sleep(0.2)
+    redirect ("/game/#{@category}")
   end
 
   question_block = parsed_response["results"].first
