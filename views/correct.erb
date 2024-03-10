@@ -1,4 +1,8 @@
 <div class="correct-screen">
   <h1>Correct</h1>
-  <a href="/game">Pick another category</a>
+  <% if @complete_pie %>
+    <a href="/complete-pie">Pick another category</a>
+  <% else %>
+    <a href="/game">Pick another category</a>
+  <% end %>
 </div>

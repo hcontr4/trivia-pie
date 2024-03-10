@@ -17,7 +17,7 @@ get("/") do
   erb(:landing)
 end
 
-get("/reset_game") do 
+get("/reset-game") do 
   cookies[:slice_status] = JSON.generate({
     "film" => false,
     "science" => false,
@@ -27,6 +27,11 @@ get("/reset_game") do
   })
 
   redirect to "/game"
+end
+
+get("/complete-pie") do
+  @slice_status = JSON.parse(cookies[:slice_status])
+  erb(:complete)
 end
 
 get("/game") do
@@ -61,9 +66,20 @@ end
 get("/game/:category/correct") do
   @category = params[:category]
 
+  # Retrieve game status and update 
   slice_status = JSON.parse(cookies[:slice_status])
   slice_status[@category] = true
+
+  # Store updated status back in cookie
   cookies[:slice_status] = JSON.generate(slice_status)
+
+  # Check for a complete pie 
+  @complete_pie = true
+  slice_status.each do | key, val| 
+    @completed_pie = false unless val
+  end
+
+  @status = slice_status
   erb(:correct)
 end
 
