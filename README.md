@@ -7,4 +7,4 @@ Simple trivia where the goal is to get once of each slice/category
 - obtain all slices to complete pie and finish game
 
 
-[Link to website](## https://trivia-pie.onrender.com/game)
+[Link to website](https://trivia-pie.onrender.com/game)
