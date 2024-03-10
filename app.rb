@@ -14,7 +14,7 @@ CATEGORY_CODE = {
 }
 
 get("/") do
-  erb(:landing)
+  redirect to "/game"
 end
 
 get("/reset-game") do 
