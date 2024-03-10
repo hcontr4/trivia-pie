@@ -17,9 +17,15 @@
       <% end %>
     <% end %>
   </div>
-  <a href="/game/<%=@category%>">
-    <!-- Pick another <%= @category %> question -->
-    <img class="reroll" src="/images/reroll-icon.svg" alt="reroll-question">
-  </a>
-  <a class="new-category" href="/game">Pick another category</a>
+  <% if @result == "incorrect" %>
+    <a href="/game/<%=@category%>">
+      <!-- Pick another <%= @category %> question -->
+      <img class="reroll" src="/images/reroll-icon.svg" alt="reroll-question">
+    </a>
+  <% end %>
+  <% if @complete_pie %>
+    <a class="new-category" href="/complete-pie">Pick another category</a>
+  <% else %>
+    <a class="new-category" href="/game">Pick another category</a>
+  <% end %>
 </div>
