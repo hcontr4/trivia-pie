@@ -76,10 +76,10 @@ get("/game/:category/correct") do
   # Check for a complete pie 
   @complete_pie = true
   slice_status.each do | key, val| 
-    @completed_pie = false unless val
+    @complete_pie = false unless val
   end
 
-  @status = slice_status
+  #@status = slice_status
   erb(:correct)
 end
 
