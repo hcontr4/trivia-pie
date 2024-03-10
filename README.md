@@ -1,10 +1,10 @@
 # trivia-pie
 
 Simple trivia game where the goal is to get one of each slice/category
-- click on category to attempt slice
-- if answer if unknown or attemp is wrong press arrow symbol for another question
-- obtain slice by answering a question correctly
-- obtain all slices to complete pie and finish game
+- Click on category to attempt slice.
+- If answer is unknown or attemp is wrong press arrow symbol for another question.
+- Obtain slice by answering a question correctly.
+- Obtain all slices to complete pie and finish game.
 
 
 [Link to website](https://trivia-pie.onrender.com/game)
